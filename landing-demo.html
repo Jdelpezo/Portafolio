@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elementor Style Landing Demo</title>
+
+<style>
+:root {
+  --primary: #6366f1;
+  --secondary: #22d3ee;
+  --dark: #020617;
+  --light: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--dark);
+  color: var(--light);
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 20px;
+  background:
+    radial-gradient(circle at top left, #6366f1 0%, transparent 40%),
+    radial-gradient(circle at bottom right, #22d3ee 0%, transparent 40%),
+    #020617;
+}
+
+.hero-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 650px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  margin-top: 40px;
+}
+
+.hero-buttons a {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 16px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #020617;
+}
+
+.btn-secondary {
+  border: 1px solid #334155;
+  color: white;
+}
+
+/* SECTIONS */
+section {
+  padding: 120px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-sub {
+  text-align: center;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin: 15px 0 60px;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148,163,184,0.15);
+  border-radius: 24px;
+  padding: 35px;
+  position: relative;
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 1px;
+  background: linear-gradient(135deg, #22d3ee, #6366f1);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 
+    0 30px 80px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(34,211,238,0.6);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.card p {
+  color: #cbd5f5;
+}
+
+/* TESTIMONIAL */
+.testimonial {
+  background: linear-gradient(135deg, #020617, #020617);
+  border: 1px solid #1e293b;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #020617;
+  text-align: center;
+  border-radius: 40px;
+  margin: 0 20px 120px;
+}
+
+.cta h2 {
+  color: #020617;
+}
+
+.cta p {
+  font-size: 1.1rem;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 30px;
+  background: #020617;
+  color: white;
+  padding: 16px 36px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>
+      Modern <span>WordPress websites</span><br>
+      built with Elementor
+    </h1>
+    <p>
+      Conversion-focused landing pages and business websites.
+      Clean design, smooth animations and easy content management.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#" class="btn-primary">Start your project</a>
+      <a href="#" class="btn-secondary">View demos</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section>
+  <div class="container">
+    <div class="section-sub">What I do</div>
+    <h2>Services</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Landing Pages</h3>
+        <p>
+          High-converting landing pages designed with modern UI patterns
+          and Elementor-style layouts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Business Websites</h3>
+        <p>
+          Clean and professional websites for small businesses
+          focused on clarity and trust.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>WordPress + Elementor</h3>
+        <p>
+          Easy-to-edit websites without technical complexity.
+          Perfect for non-technical clients.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="container">
+    <div class="section-sub">Social proof</div>
+    <h2>What clients say</h2>
+
+    <div class="grid">
+      <div class="card testimonial">
+        <p>
+          “The website looks premium and modern.
+          Exactly what we needed to attract new clients.”
+        </p>
+        <strong>— Demo Client</strong>
+      </div>
+
+      <div class="card testimonial">
+        <p>
+          “Great communication and fast delivery.
+          The Elementor layout is very easy to manage.”
+        </p>
+        <strong>— Demo Client</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>Let’s build your website</h2>
+  <p>
+    Ready to launch a clean, modern and editable website?
+  </p>
+  <a href="#">Contact me</a>
+</div>
+
+</body>
+</html>

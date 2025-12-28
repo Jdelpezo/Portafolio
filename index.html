@@ -1,117 +1,278 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio Web – WordPress & Elementor</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #111827;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    h2 {
-      margin-top: 40px;
-      text-align: center;
-    }
-    section {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .card h3 {
-      margin-top: 0;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111827;
-      color: white;
-      margin-top: 40px;
-    }
-    a.button {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 5px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Creator | Portfolio</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 20px;
+  background:
+    radial-gradient(circle at top left, #38bdf8 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #6366f1 0%, transparent 35%),
+    #020617;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero span {
+  color: #38bdf8;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  opacity: 0.85;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  background: #020617;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* PROJECTS */
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  padding: 35px 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
+.project-tag {
+  color: #38bdf8;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.project-item h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.project-item p {
+  opacity: 0.85;
+  max-width: 600px;
+}
+
+.project-item a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  background: #020617;
+  border-top: 1px solid #1e293b;
+}
+
+/* ABOUT */
+.about-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 40px;
+  transition: border 0.3s, transform 0.3s;
+}
+
+.about-card:hover {
+  border-color: #38bdf8;
+  transform: translateY(-4px);
+}
+
+.about-text {
+  max-width: 700px;
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin-bottom: 35px;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.about-feature {
+  padding: 18px;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.01);
+}
+
+.about-feature span {
+  color: #38bdf8;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>Portafolio Web – WordPress & Elementor</h1>
-    <p>Creador de sitios profesionales, modernos y administrables en WordPress.</p>
-  </header>
 
-  <section>
-    <h2>Sobre mí</h2>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>
+      I build <span>WordPress websites</span><br>
+      with Elementor & simple code
+    </h1>
     <p>
-      Soy diseñador web especializado en WordPress y Elementor. Construyo landing pages, sitios empresariales y tiendas simples, optimizadas para conversión, velocidad y una fácil administración. También realizo ajustes en HTML/CSS cuando es necesario.
+      Clean, modern and easy-to-manage websites for small businesses.
+      Junior developer focused on practical solutions.
     </p>
-  </section>
+  </div>
+</div>
 
-  <section>
-    <h2>Proyectos DEMO</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>Landing Page Moderna</h3>
-        <p>Sección hero, servicios, testimonios y formulario. Totalmente responsive.</p>
-        <a class="button" href="#">Ver Demo</a>
-      </div>
-      <div class="card">
-        <h3>Sitio Empresarial</h3>
-        <p>4 secciones: Inicio, Servicios, Nosotros, Contacto. Diseño limpio y profesional.</p>
-        <a class="button" href="#">Ver Demo</a>
-      </div>
-      <div class="card">
-        <h3>Tienda WooCommerce</h3>
-        <p>Tienda básica con 6 productos, carrito y checkout funcional.</p>
-        <a class="button" href="#">Ver Demo</a>
+<!-- ABOUT -->
+<section>
+  <div class="container">
+    <h2>About me</h2>
+
+    <div class="about-card">
+      <p class="about-text">
+        I build clean and professional WordPress websites using Elementor.
+        My focus is on simple structures, modern layouts and websites that are
+        easy to manage for small businesses.
+        <br><br>
+        I’m a junior developer, but I care a lot about details, usability and
+        delivering practical solutions that actually work.
+      </p>
+
+      <div class="about-features">
+        <div class="about-feature">
+          <span>WordPress & Elementor</span>
+          Custom layouts, landing pages and business websites without heavy code.
+        </div>
+
+        <div class="about-feature">
+          <span>Clean & Modern Design</span>
+          Elementor-style sections, spacing, typography and responsive layouts.
+        </div>
+
+        <div class="about-feature">
+          <span>Light Coding</span>
+          Basic HTML, CSS and JavaScript when needed for small custom features.
+        </div>
+
+        <div class="about-feature">
+          <span>Client-Friendly</span>
+          Easy-to-edit websites so clients can manage their own content.
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>Servicios</h2>
-    <ul>
-      <li>Diseño web con Elementor</li>
-      <li>Landing pages profesionales</li>
-      <li>Sitios corporativos completos</li>
-      <li>Tienda WooCommerce básica</li>
-      <li>Optimización de velocidad</li>
-      <li>SEO inicial</li>
-    </ul>
-  </section>
 
-  <footer>
-    <p>¿Quieres trabajar conmigo? Contáctame en Upwork.</p>
-  </footer>
+<!-- PROJECTS -->
+<section>
+  <div class="container">
+    <h2>Demo projects</h2>
+
+    <div class="project-item">
+      <div>
+        <div class="project-tag">WordPress · Elementor</div>
+        <h3>Conversion Landing Page</h3>
+      </div>
+      <div>
+        <p>
+          Modern landing page focused on conversion.
+          Built with Elementor-style layouts, clear CTA structure
+          and responsive design.
+        </p>
+        <a href="landing-demo.html">View demo →</a>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div>
+        <div class="project-tag">Website · Business</div>
+        <h3>Corporate Business Website</h3>
+      </div>
+      <div>
+        <p>
+          Professional website structure with services,
+          about section and contact form.
+          Designed for small businesses.
+        </p>
+        <a href="#">View demo →</a>
+      </div>
+    </div>
+
+    <div class="project-item">
+      <div>
+        <div class="project-tag">Code · Mini App</div>
+        <h3>Small Web Tool</h3>
+      </div>
+      <div>
+        <p>
+          Lightweight web tool built with HTML, CSS and JavaScript.
+          Demonstrates basic logic and clean UI.
+        </p>
+        <a href="#">View demo →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <p>Available for freelance work on Upwork</p>
+</footer>
+
 </body>
 </html>
