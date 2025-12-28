@@ -21,7 +21,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 20px;
+  padding: 60px 20px;
   background:
     radial-gradient(circle at top left, #6366f1 0%, transparent 40%),
     radial-gradient(circle at bottom right, #22d3ee 0%, transparent 40%),
@@ -155,7 +155,7 @@ body {
 
 /* SECTIONS */
 section {
-  padding: 120px 20px;
+  padding: 30px 20px;
 }
 
 .container {
