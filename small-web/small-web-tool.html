@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Small Web Tool · Text Utilities</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a2d9d6a66f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="tool-header">
+    <h1>Text Utilities Tool</h1>
+    <p>Quick tools to clean, analyze and transform your text.</p>
+  </header>
+
+  <main class="tool-container">
+    <textarea id="textInput" placeholder="Paste or write your text here..."></textarea>
+
+    <div class="actions">
+      <button onclick="toUpper()"><i class="fa-solid fa-arrow-up"></i> Uppercase</button>
+      <button onclick="toLower()"><i class="fa-solid fa-arrow-down"></i> Lowercase</button>
+      <button onclick="removeSpaces()"><i class="fa-solid fa-broom"></i> Clean spaces</button>
+      <button onclick="copyText()"><i class="fa-solid fa-copy"></i> Copy</button>
+    </div>
+
+    <div class="stats">
+      <div>
+        <span id="wordCount">0</span>
+        <small>Words</small>
+      </div>
+      <div>
+        <span id="charCount">0</span>
+        <small>Characters</small>
+      </div>
+    </div>
+  </main>
+
+  <footer class="tool-footer">
+    <p>Small Web Tool · Portfolio Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
